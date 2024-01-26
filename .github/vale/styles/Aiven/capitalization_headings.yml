@@ -2,6 +2,7 @@ extends: capitalization
 message: "'%s' should be in sentence case"
 level: error
 scope: heading
+# $title, $sentence, $lower, $upper, or a pattern.
 match: $sentence
 exceptions:
   - ACLs
@@ -25,7 +26,6 @@ exceptions:
   - Business
   - BYOC
   - Cassandra
-  - CLI
   - ClickHouse
   - CloudWatch
   - Cloud Logging
@@ -125,6 +125,7 @@ exceptions:
   - Sphinx
   - Splunk
   - Spring
+  - SQL
   - SQL Server
   - Startup
   - 'Step \d+: \w+'

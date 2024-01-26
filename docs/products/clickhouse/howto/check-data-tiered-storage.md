@@ -1,52 +1,35 @@
----
-title: Check data distribution between storage devices in Aiven for ClickHouse®'s tiered storage
----
+Check data distribution between storage devices in Aiven for ClickHouse®'s tiered storage
+=========================================================================================
 
-:::important
-Aiven for ClickHouse® tiered storage is a
-[limited availability feature](/docs/platform/concepts/beta_services). If you're interested in trying out this feature, contact
-the sales team at [sales@aiven.io](mailto:sales@aiven.io).
-:::
+Monitor how your data is distributed between the two layers of your tiered storage: SSD and object storage.
 
-Monitor how your data is distributed between the two layers of your
-tiered storage: SSD and object storage.
+About checking data distribution
+--------------------------------
 
-## About checking data distribution
+If you have the tiered storage feature :doc:`enabled </docs/products/clickhouse/howto/enable-tiered-storage>` on your project, your data in Aiven for ClickHouse is distributed between two storage devices (tiers). You can check on what storage devices your databases and tables are stored. You can also preview their total sizes as well as part counts, minimum part sizes, median part sizes, and maximum part sizes.
 
-If you have the tiered storage feature
-[enabled](/docs/products/clickhouse/howto/enable-tiered-storage) on your project, your data in Aiven for ClickHouse is
-distributed between two storage devices (tiers). You can check on what
-storage devices your databases and tables are stored. You can also
-preview their total sizes as well as part counts, minimum part sizes,
-median part sizes, and maximum part sizes.
+Prerequisites
+-------------
 
-## Prerequisites
+* Access to `Aiven Console <https://console.aiven.io/>`_
+* Tiered storage feature :doc:`enabled </docs/products/clickhouse/howto/enable-tiered-storage>`
+* Command line tool (:doc:`ClickHouse client </docs/products/clickhouse/howto/connect-with-clickhouse-cli>`)
 
--   Access to [Aiven Console](https://console.aiven.io/)
--   Tiered storage feature
-    [enabled](/docs/products/clickhouse/howto/enable-tiered-storage)
--   Command line tool
-    ([ClickHouse client](/docs/products/clickhouse/howto/connect-with-clickhouse-cli))
+Check data distribution in Aiven Console
+----------------------------------------
 
-## Check data distribution in Aiven Console
+You can use `Aiven Console <https://console.aiven.io/>`_ to check if tiered storage is enabled on your service and, if it is, how much storage is used on each tier (local SSD and remote object storage) for particular tables.
 
-You can use [Aiven Console](https://console.aiven.io/) to check if
-tiered storage is enabled on your service and, if it is, how much
-storage is used on each tier (local SSD and remote object storage) for
-particular tables.
+To access tiered storage's status information, go to `Aiven Console <https://console.aiven.io/>`_ > your Aiven for ClickHouse service > the **Databases and tables** page > your database > your table > **View details** > **Storage details**.
 
-To access tiered storage's status information, go to [Aiven
-Console](https://console.aiven.io/) \> your Aiven for ClickHouse service
-\> the **Databases and tables** page \> your database \> your table \>
-**View details** \> **Storage details**.
+Run a data distribution check with the ClickHouse client (CLI)
+--------------------------------------------------------------
 
-## Run a data distribution check with the ClickHouse client (CLI)
+1. :doc:`Connect to your Aiven for ClickHouse service </docs/products/clickhouse/howto/list-connect-to-service>` using, for example, the ClickHouse client (CLI).
+2. Run the following query:
 
-1.  [Connect to your Aiven for ClickHouse service](/docs/products/clickhouse/howto/list-connect-to-service) using, for example, the ClickHouse client (CLI).
+   .. code-block:: bash
 
-2.  Run the following query:
-
-    ``` bash
     SELECT
         database,
         table,
@@ -66,27 +49,28 @@ Console](https://console.aiven.io/) \> your Aiven for ClickHouse service
         table ASC,
         disk_name ASC
 
-    You can expect to receive the following output:
-    ```
+   You can expect to receive the following output:
 
-    ``` bash
+   .. code-block:: bash
+
     ┌─database─┬─table─────┬─disk_name─┬─total_size─┬─parts_count─┬─min_part_size─┬─median_part_size─┬─max_part_size─┐
     │ datasets │ hits_v1   │ default   │ 1.20 GiB   │           6 │ 33.65 MiB     │ 238.69 MiB       │ 253.18 MiB    │
     │ datasets │ visits_v1 │ S3        │ 536.69 MiB │           5 │ 44.61 MiB     │ 57.90 MiB        │ 317.19 MiB    │
     │ system   │ query_log │ default   │ 75.85 MiB  │         102 │ 7.51 KiB      │ 12.36 KiB        │ 1.55 MiB      │
     └──────────┴───────────┴───────────┴────────────┴─────────────┴───────────────┴──────────────────┴───────────────┘
-    ```
 
-The query returns a table with data distribution details for all
-databases and tables that belong to your service: the storage device
-they use, their total sizes as well as parts counts and sizing.
+.. topic:: Result
 
-## What's next
+   The query returns a table with data distribution details for all databases and tables that belong to your service: the storage device they use, their total sizes as well as parts counts and sizing.
 
--   [Transfer data between SSD and object storage](/docs/products/clickhouse/howto/transfer-data-tiered-storage)
--   [Configure data retention thresholds for tiered storage](/docs/products/clickhouse/howto/configure-tiered-storage)
+What's next
+-----------
 
-## Related pages
+* :doc:`Transfer data between SSD and object storage </docs/products/clickhouse/howto/transfer-data-tiered-storage>`
+* :doc:`Configure data retention thresholds for tiered storage </docs/products/clickhouse/howto/configure-tiered-storage>`
 
--   [About tiered storage in Aiven for ClickHouse](/docs/products/clickhouse/concepts/clickhouse-tiered-storage)
--   [Enable tiered storage in Aiven for ClickHouse](/docs/products/clickhouse/howto/enable-tiered-storage)
+Related reading
+---------------
+
+* :doc:`About tiered storage in Aiven for ClickHouse </docs/products/clickhouse/concepts/clickhouse-tiered-storage>`
+* :doc:`Enable tiered storage in Aiven for ClickHouse </docs/products/clickhouse/howto/enable-tiered-storage>`

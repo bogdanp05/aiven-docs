@@ -1,6 +1,7 @@
 extends: capitalization
-message: "'%s' should be in sentence case"
-level: error
+message: "'%s' should use sentence-style capitalization."
+link: "https://developers.google.com/style/capitalization#capitalization-in-titles-and-headings"
+level: warning
 scope: heading
 match: $sentence
 exceptions:
@@ -21,11 +22,13 @@ exceptions:
   - AWS Marketplace
   - AWS Transit Gateway
   - Azure
+  - Azure
   - Azure Marketplace
   - Boot
   - Business
   - BYOC
   - Cassandra
+  - CLI
   - CLI
   - ClickHouse
   - Cloud Logging
@@ -34,6 +37,7 @@ exceptions:
   - Connect
   - Connector
   - Cookbook
+  - Cosmos
   - Couchbase
   - cURL
   - Dashboards
@@ -42,10 +46,11 @@ exceptions:
   - Dev
   - DHCP
   - Disaster Recovery
-  - DNS
+  - Docker
   - Docker
   - Dynamic Disk Sizing
   - Elasticsearch
+  - Emmet
   - European Union
   - Flink
   - FusionAuth
@@ -63,15 +68,16 @@ exceptions:
   - Google Pub/Sub
   - Google Pub/Sub Lite
   - Grafana
+  - gRPC
   - Hobbyist
   - HowTo
+  - I
   - Identity Provider
   - IdP
   - InfluxDB
   - InnoDB
   - IPsec
   - Java
-  - JDBC
   - JMX
   - JobManager
   - Jolokia
@@ -83,12 +89,17 @@ exceptions:
   - Kpow
   - ksqlDB
   - Kubernetes
+  - Kubernetes
+  - Linux
   - LogDNA
   - Loggly
   - Logtail
   - M3
+  - macOS
+  - Marketplace
   - Microsoft Azure
   - MirrorMaker
+  - MongoDB
   - MongoDB
   - MySQL
   - New Relic
@@ -117,6 +128,7 @@ exceptions:
   - Provectus
   - Python
   - Redis
+  - REPL
   - reStructuredText
   - Rivery
   - SAML
@@ -128,22 +140,29 @@ exceptions:
   - Sphinx
   - Splunk
   - Spring
+  - SQL
   - SQL Server
   - Startup
+  - Studio
   - Sumo Logic
   - TaskManager
   - Telegraf
   - Terraform
   - TimescaleDB
   - Transport Layer Security
-  - TXT
+  - TypeScript
   - United States
   - UpCloud
+  - URLs
   - UUID
   - UUIDs
   - Virtual Private Cloud
+  - Visual
   - VNet
+  - VS
+  - Windows
   - Workbench
   - Zapier
   - ZDM Proxy
   - ZooKeeper
+  - Limitations

@@ -6,12 +6,6 @@ Discover the tiered storage capability in Aiven for ClickHouse®. Learn
 how it works and explore its use cases. Check out why you might need it
 and what benefits you get using it.
 
-:::important
-Aiven for ClickHouse® tiered storage is a
-[limited availability feature](/docs/platform/concepts/beta_services). If you're interested in trying out this feature, contact
-the sales team at [sales@aiven.io](mailto:sales@aiven.io).
-:::
-
 ## Overview
 
 The tiered storage feature introduces a method of organizing and storing

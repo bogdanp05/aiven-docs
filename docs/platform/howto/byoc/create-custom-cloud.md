@@ -1,9 +1,9 @@
 ---
 title: Create an AWS custom cloud in Aiven
+sidebar_label: Create custom clouds
 ---
 
-Create a [custom cloud](/docs/platform/concepts/byoc) in your Aiven organization to better address your specific
-business needs or project requirements.
+Create a [custom cloud](/docs/platform/concepts/byoc) in your Aiven organization to better address your specific business needs or project requirements.
 
 :::note
 -   Creating and using custom clouds in your Aiven organization requires
@@ -17,13 +17,6 @@ business needs or project requirements.
     not affect the configuration of your existing organizations,
     projects, or services. This only makes the new BYOC capabilities
     available in your environment.
-:::
-
-:::important
-Custom cloud configuration in Aiven is an
-[early availability feature](/docs/platform/concepts/beta_services). You cover the costs associated with building and
-maintaining your custom cloud: payments for your integrated AWS
-infrastructure and Aiven services within the custom cloud.
 :::
 
 ## About creating a custom cloud
@@ -59,6 +52,14 @@ contacts for your custom cloud.
 
 -   You need at least the Priority tier of Aiven support services to be
     eligible for activating BYOC.
+
+    :::note
+    Check out [Aiven support tiers](https://aiven.io/support-services) and
+    [Aiven responsibility matrix](https://aiven.io/responsibility-matrix) for BYOC.
+    Contact the [sales team](mailto:sales@aiven.io) to learn more or upgrade your support
+    tier.
+    :::
+
 -   If you want to build your custom cloud with a cloud provider other
     than AWS, you need to request it as detailed in
     [Enable bring your own cloud (BYOC) with Aiven](/docs/platform/howto/byoc/enable-byoc) and follow up with the Aiven team.
@@ -607,10 +608,14 @@ taking the following steps:
 
 #### Set up your custom cloud's availability
 
-Select in what projects you\'ll be able to use your new custom cloud to
-create services. You can make your cloud available for all the projects
-in your organization, selected organizational units, or specific
-projects only.
+Select in what projects you'll be able to use your new custom cloud as a hosting cloud for
+services.
+
+:::note
+In the projects where you enable your custom cloud, you'll be able to create new services in the custom cloud and migrate your existing services to the custom cloud.
+
+You can make your cloud available for all the projects in your organization, selected organizational units, or specific projects only.
+:::
 
 Continue working in the **Create custom cloud** wizard by taking the
 following steps:
@@ -639,16 +644,21 @@ available from all the projects in this unit.
 
 #### Add customer contacts
 
-Select at least one person whom Aiven can contact in case any technical
-issue with the custom cloud needs fixing. Continue working in the
-**Create custom cloud** wizard by taking the following steps:
+Select at least one person whom Aiven can contact in case any technical issues with your
+need to be fixed.
 
-1.  In the **Customer contacts** section, select a contact person's
-    role using the **Job title** dropdown menu, and provide their email
-    address in the **Email** field.
-2.  Use **+ Add another contact** to add as many customer contacts as
-    needed for your custom cloud.
-3.  Select **Create**.
+:::note
+**Admin** is a mandatory role, which is required as a primary support contact.
+:::
+
+Continue working in the **Create custom cloud** wizard by taking the following steps:
+
+1. In the **Customer contacts** section, set up the mandatory **Admin** contact by
+   providing an email address in the **Email** field.
+1. Use **+ Add another contact** to add as many customer contacts as needed for your
+   custom cloud: select a contact person's role using the **Job title** dropdown menu, and
+   provide an email address in the **Email** field.
+1. Select **Create**.
 
 :::note[Result]
 The custom cloud process has been initiated for you, which is
@@ -689,15 +699,13 @@ steps:
     column.
 
 :::note[Result]
-If your custom cloud's status is **Active**, its deployment has been
-completed. Your custom cloud is ready to use and you can see it on the
-list of your custom clouds in the **Bring your own cloud** view. Now you
-can create services using your new custom cloud.
+If your custom cloud's status is **Active**, its deployment has been completed. Your
+custom cloud is ready to use and you can see it on the list of your custom clouds in the
+**Bring your own cloud** view. Now you can create new services in the custom cloud and
+migrate your existing services to the custom cloud.
 :::
 
-## Next steps
-
-### Destroy the Terraform resources
+#### Destroy the Terraform resources
 
 As soon as you new custom cloud gets the **Active** status, remove the
 Terraform resources your created in your AWS account while creating the
@@ -705,15 +713,26 @@ cloud. See the guidelines on how to use the `destroy` command in
 [Command:
 destroy](https://developer.hashicorp.com/terraform/cli/commands/destroy).
 
-### Create a service using the new cloud
+## Manage services in custom clouds
 
-To create a service in [Aiven Console](https://console.aiven.io/) using
-your new custom cloud, follow the guidelines in
+### Create new services in the custom cloud
+
+To create a service in [Aiven Console](https://console.aiven.io/) in your new custom
+cloud, follow the guidelines in
 [Create a new service](/docs/platform/howto/create_new_service).
 
-When you get to the **Select service region** step while setting up your
-service in [Aiven Console](https://console.aiven.io/), you\'ll be able
-to select **Custom clouds** from among available regions.
+When creating a service in the [Aiven Console](https://console.aiven.io/), at the
+**Select service region** step, select **Custom clouds** from among available regions.
+
+### Migrate existing services to the custom cloud
+
+To migrate an existing Aiven service to your new custom cloud using
+[Aiven Console](https://console.aiven.io/), follow the guidelines in
+[Migrate service to another cloud or region](/docs/platform/howto/migrate-services-cloud-region).
+
+When migrating your service in [Aiven Console](https://console.aiven.io/) > the
+**Migrate service to another cloud** window, select **Custom clouds** from among available
+regions.
 
 ## Related pages
 

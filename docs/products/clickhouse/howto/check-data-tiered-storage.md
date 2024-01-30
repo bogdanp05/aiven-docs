@@ -1,5 +1,6 @@
 ---
 title: Check data distribution between storage devices in Aiven for ClickHouse®'s tiered storage
+sidebar_label: Check data distribution
 ---
 
 Monitor how your data is distributed between the two layers of your

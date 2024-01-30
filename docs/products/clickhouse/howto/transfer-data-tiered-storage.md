@@ -1,5 +1,6 @@
 ---
 title: Transfer data between storage devices in Aiven for ClickHouse®'s tiered storage
+sidebar_label: Move data between storage devices
 ---
 
 Check out this article for instructions on transferring data from and to

@@ -1,5 +1,6 @@
 ---
 title: Tiered storage in Aiven for ClickHouse®
+sidebar_label: About tiered storage
 ---
 
 Discover the tiered storage capability in Aiven for ClickHouse®. Learn

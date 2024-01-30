@@ -1236,6 +1236,7 @@ const sidebars: SidebarsConfig = {
                     id: 'products/clickhouse/howto/list-tiered-storage',
                   },
                   items: [
+                    'products/clickhouse/concepts/clickhouse-tiered-storage',
                     'products/clickhouse/howto/enable-tiered-storage',
                     'products/clickhouse/howto/configure-tiered-storage',
                     'products/clickhouse/howto/check-data-tiered-storage',

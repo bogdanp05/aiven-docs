@@ -1,5 +1,6 @@
 ---
-title: Activate tiered storage in Aiven for ClickHouse®
+title: Enable tiered storage in Aiven for ClickHouse®
+sidebar_label: Enable tiered storage
 ---
 
 Find out how to enable the tiered storage feature on your project and

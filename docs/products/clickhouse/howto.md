@@ -68,6 +68,7 @@ Integrations
 Tiered storage
 </summary>
 
+-   [About tiered storage in Aiven for ClickHouse®](/docs/products/clickhouse/concepts/clickhouse-tiered-storage)
 -   [Enable tiered storage in Aiven for ClickHouse®](/docs/products/clickhouse/howto/enable-tiered-storage)
 -   [Configure tiered storage in Aiven for ClickHouse®](/docs/products/clickhouse/howto/configure-tiered-storage)
 -   [Check data distribution in tiered storage for Aiven for ClickHouse®](/docs/products/clickhouse/howto/check-data-tiered-storage)

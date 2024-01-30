@@ -1,5 +1,6 @@
 ---
 title: Configure data retention thresholds in Aiven for ClickHouse®'s tiered storage
+sidebar_label: Set up data retention
 ---
 
 Learn to control how your data is distributed between storage devices in
